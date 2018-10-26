@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+    id 'war'
+}
+
+group 'sp1'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    compile group: 'org.springframework', name: 'spring-context', version: '5.0.7.RELEASE'
+    compile group: 'org.springframework', name: 'spring-test', version: '5.0.7.RELEASE'
+    compile group: 'org.springframework', name: 'spring-webmvc', version: '5.0.7.RELEASE'
+
+    compile group: 'org.projectlombok', name: 'lombok', version: '1.18.0'
+    compile group: 'log4j', name: 'log4j', version: '1.2.17'
+}
