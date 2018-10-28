@@ -21,6 +21,8 @@ dependencies {
     compile group: 'org.springframework', name: 'spring-context', version: '5.0.7.RELEASE'
     compile group: 'org.springframework', name: 'spring-test', version: '5.0.7.RELEASE'
     compile group: 'org.springframework', name: 'spring-webmvc', version: '5.0.7.RELEASE'
+// https://mvnrepository.com/artifact/com.zaxxer/HikariCP
+    compile group: 'com.zaxxer', name: 'HikariCP', version: '2.7.4'
 
     compile group: 'org.projectlombok', name: 'lombok', version: '1.18.0'
     compile group: 'log4j', name: 'log4j', version: '1.2.17'
