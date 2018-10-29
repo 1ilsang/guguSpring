@@ -9,7 +9,7 @@ import java.sql.DriverManager;
 import static org.junit.Assert.fail;
 
 @Log4j
-public class JDBCTest {
+public class JDBCTests {
     static {
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
