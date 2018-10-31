@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
 import javax.sql.DataSource;
 
 @Configuration
-@ComponentScan(basePackages = {"org.zerock.sample"})
+@ComponentScan(basePackages = {"org.zerock.service"})
 @MapperScan(basePackages = {"org.zerock.mapper"})
 public class RootConfig {
     @Bean
@@ -22,7 +22,7 @@ public class RootConfig {
 //        hikariConfig.setJdbcUrl("jdbc:oracle:thin:@localhost:1521:orcl");
         hikariConfig.setDriverClassName("net.sf.log4jdbc.sql.jdbcapi.DriverSpy");
         hikariConfig.setJdbcUrl("jdbc:log4jdbc:oracle:thin:@localhost:1521:orcl");
-        hikariConfig.setUsername("system");
+        hikariConfig.setUsername("\"1ilsang\"");
         hikariConfig.setPassword("passwd");
         HikariDataSource dataSource = new HikariDataSource(hikariConfig);
         return dataSource;

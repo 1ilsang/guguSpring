@@ -10,6 +10,7 @@ import static org.junit.Assert.fail;
 
 @Log4j
 public class JDBCTests {
+
     static {
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -19,7 +20,7 @@ public class JDBCTests {
     }
     @Test
     public void testConnection() {
-        try(Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "system", "passwd")){
+        try(Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "\"1ilsang\"", "passwd")){
             log.info(con);
         }catch (Exception e){
             fail(e.getMessage());

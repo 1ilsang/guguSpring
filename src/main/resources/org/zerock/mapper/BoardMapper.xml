@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.zerock.mapper.BoardMapper">
+    <select id="getList" resultType="org.zerock.domain.BoardVO">
+        <![CDATA[
+          SELECT *
+          FROM tbl_board
+          WHERE bno > 0
+        ]]>
+    </select>
+
+    <insert id="insert">
+        INSERT INTO tbl_board (bno, title, content, writer)
+        VALUES (seq_board.nextval, #{title}, #{content}, #{writer})
+    </insert>
+
+    <insert id="insertSelectKey">
+        <selectKey keyProperty="bno" order="BEFORE" resultType="long">
+            SELECT seq_board.nextval
+            FROM dual
+        </selectKey>
+        INSERT INTO tbl_board (bno, title, content, writer)
+        VALUES (#{bno}, #{title}, #{content}, #{writer})
+    </insert>
+
+    <select id="read" resultType="org.zerock.domain.BoardVO">
+        SELECT * FROM tbl_board WHERE bno = #{bno}
+    </select>
+
+    <delete id="delete">
+        DELETE tbl_board WHERE bno = #{bno}
+    </delete>
+
+    <update id="update">
+        UPDATE tbl_board
+        SET title = #{title},
+            content = #{content},
+            writer = #{writer},
+            updateDate = sysdate
+        WHERE bno = #{bno}
+    </update>
+</mapper>
