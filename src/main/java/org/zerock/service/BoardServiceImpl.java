@@ -12,9 +12,9 @@ import java.util.List;
 
 @Log4j
 @Service
-@AllArgsConstructor
+//@AllArgsConstructor
 public class BoardServiceImpl implements BoardService {
-//    @Setter(onMethod_ = @Autowired)
+    @Setter(onMethod_ = @Autowired)
     private BoardMapper mapper;
 
     @Override
