@@ -12,16 +12,16 @@ import org.springframework.context.annotation.Configuration;
 import javax.sql.DataSource;
 
 @Configuration
-@ComponentScan(basePackages = {"org.zerock.service", "org.zerock.domain"})
+@ComponentScan(basePackages = "org.zerock.service")
 @MapperScan(basePackages = {"org.zerock.mapper"})
 public class RootConfig {
     @Bean
     public DataSource dataSource() {
         HikariConfig hikariConfig = new HikariConfig();
-//        hikariConfig.setDriverClassName("oracle.jdbc.driver.OracleDriver");
-//        hikariConfig.setJdbcUrl("jdbc:oracle:thin:@localhost:1521:orcl");
-        hikariConfig.setDriverClassName("net.sf.log4jdbc.sql.jdbcapi.DriverSpy");
-        hikariConfig.setJdbcUrl("jdbc:log4jdbc:oracle:thin:@localhost:1521:orcl");
+        hikariConfig.setDriverClassName("oracle.jdbc.driver.OracleDriver");
+        hikariConfig.setJdbcUrl("jdbc:oracle:thin:@localhost:1521:orcl");
+        //hikariConfig.setDriverClassName("net.sf.log4jdbc.sql.jdbcapi.DriverSpy");
+        //hikariConfig.setJdbcUrl("jdbc:log4jdbc:oracle:thin:@localhost:1521:orcl");
         hikariConfig.setUsername("\"1ilsang\"");
         hikariConfig.setPassword("passwd");
         HikariDataSource dataSource = new HikariDataSource(hikariConfig);
