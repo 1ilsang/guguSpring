@@ -9,6 +9,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.zerock.config.RootConfig;
 import org.zerock.domain.BoardVO;
+import org.zerock.domain.Criteria;
 
 import static org.junit.Assert.assertNotNull;
 
@@ -41,7 +42,9 @@ public class BoardServiceTests {
         board.setWriter("TESTER");
         service.register(board);
         service.get(board.getBno());
-        service.getList();
+//        service.getList();
+        service.getList(new Criteria(1, 10))
+            .forEach(criBoard -> log.info(criBoard));
         board.setTitle("TEST MODIFY BOARD1");
         service.modify(board);
         service.get(board.getBno());
