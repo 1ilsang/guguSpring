@@ -9,3 +9,8 @@
 
 [Chapter 별 설명 보러가기](https://github.com/1ilsang/Study/blob/master/index/guguSpring.md)
 
+#### 조금 더 스마트하게 활용하기
+#### - commit 내역으로 챕터별 코드를 확인할 수 있습니다.
+<img src="pic/commit1.PNG" width=30% />
+<img src="pic/commit2.PNG" width=30% />
+<img src="pic/commit3.PNG" width=30% />
