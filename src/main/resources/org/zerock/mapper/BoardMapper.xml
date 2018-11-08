@@ -76,10 +76,10 @@
 
     <select id="getListWithPaging" resultType="org.zerock.domain.BoardVO">
         <![CDATA[
-          SELECT bno, title, content, writer, regdate, updatedate
+          SELECT bno, title, content, writer, regdate, updatedate, replycnt
           FROM (
             SELECT /*+INDEX_DESC(tbl_board pk_board) */
-              rownum rn, bno, title, content, writer, regdate, updatedate
+              rownum rn, bno, title, content, writer, regdate, updatedate, replycnt
             FROM tbl_board
             WHERE
         ]]>
@@ -100,4 +100,10 @@
           <include refid="criteria"></include>
         bno > 0
     </select>
+    <!-- 댓글 카운팅 482p -->
+    <update id="updateReplyCnt">
+        UPDATE tbl_board
+        SET replycnt = replycnt + #{amount}
+        WHERE bno = #{bno}
+    </update>
 </mapper>

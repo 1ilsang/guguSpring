@@ -42,6 +42,7 @@
                                     <td>
                                         <a href="<c:out value='${board.bno}' />" class="move">
                                             <c:out value="${board.title}" />
+                                            <b>[<c:out value="${board.replyCnt}"/>]</b>
                                         </a>
                                     </td>
                                     <td><c:out value="${board.writer}" /></td>
