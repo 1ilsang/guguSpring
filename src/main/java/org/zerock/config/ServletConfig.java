@@ -15,6 +15,7 @@ import java.io.IOException;
 
 @EnableWebMvc
 @ComponentScan(basePackages = {"org.zerock.controller", "org.zerock.exception"})
+// Web 관련 영역 Spring-MVC  RootConfig 다음에 실행.
 public class ServletConfig implements WebMvcConfigurer {
     @Override
     public void configureViewResolvers(ViewResolverRegistry registry)  {
